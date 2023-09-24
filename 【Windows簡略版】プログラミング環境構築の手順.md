@@ -5,13 +5,13 @@
 
 ## 1. VSCode をインストールする
 
-[1.VSCode をインストールする](./1.VSCodeをインストールする.md)
+元マニュアル: [1.VSCode をインストールする](./1.VSCodeをインストールする.md)
 
 [参考サイト](https://www.javadrive.jp/vscode/install/index1.html)の「Visual Studio Code をダウンロードする」と「Visual Studio Code をインストールする」の項を参考にインストールする。
 
 ## 2. WSL2 をインストールする
 
-[2.(Windows のみ)WSL2 をインストールする](<./2.(Windowsのみ)WSL2をインストールする.md>)
+元マニュアル: [2.(Windows のみ)WSL2 をインストールする](<./2.(Windowsのみ)WSL2をインストールする.md>)
 
 1. ターミナルを開く  
    [スタート] -> [すべてのアプリ] –> [ターミナル]をクリック
@@ -49,7 +49,7 @@ zsh
 
 ## 3. Oh My Zsh をインストールする
 
-[4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
+元マニュアル: [4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
 
 1. 下記をコピペして Enter。  
    デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して Enter.  
@@ -95,7 +95,7 @@ sudo apt -y install bc
 
 ## 4. Anaconda をインストールする
 
-[5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
+元マニュアル: [5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
 
 以下を実行する。  
 URL は最新版ではない可能性があるので、エラーになるときは[参考サイト](https://www.salesanalytics.co.jp/datascience/datascience141/#LinuxAnaconda)を見て最新版を取得する。  
@@ -113,7 +113,7 @@ source ~/.zshrc
 
 ## 5. Git エイリアスを設定する
 
-[6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
+元マニュアル: [6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
 
 1. ターミナルを開き、下記を実行して、VSCode で`~/.gitconfig`というファイルを開く。
 

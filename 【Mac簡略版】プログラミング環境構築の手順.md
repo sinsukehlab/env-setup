@@ -5,7 +5,7 @@
 
 ## 1. VSCode をインストールする
 
-[1.VSCode をインストールする](./1.VSCodeをインストールする.md)
+元マニュアル: [1.VSCode をインストールする](./1.VSCodeをインストールする.md)
 
 1. [参考サイト](https://www.javadrive.jp/vscode/install/index1.html)の「Visual Studio Code をダウンロードする」と「Visual Studio Code をインストールする」の項を参考にインストールする。
 2. インストールした VSCode を開き、  
@@ -13,14 +13,14 @@
 
 ## 2. Git をインストールする
 
-[3.(Mac のみ)Git をインストールする](<./3.(Macのみ)Gitをインストールする.md>)
+元マニュアル: [3.(Mac のみ)Git をインストールする](<./3.(Macのみ)Gitをインストールする.md>)
 
 [参考サイト](https://prog-8.com/docs/git-env)を参考にインストールする。  
 なお、現時点ではユーザー名とメールアドレスの設定まではしなくても、ターミナル上で`git --version`を入力して Enter を押したときにバージョンが表示されれ(エラーが起こらなけれ)ばよい。
 
 ## 3. Oh My Zsh をインストールする
 
-[4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
+元マニュアル: [4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
 
 1. 下記をコピペして Enter。  
    デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して Enter.  
@@ -67,7 +67,7 @@ brew install coreutil
 
 ## 4. Anaconda をインストールする
 
-[5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
+元マニュアル: [5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
 
 [参考サイト](https://www.python.jp/install/anaconda/macos/install.html)の「パッケージのダウンロード」と「パッケージのインストール」を参考にインストールする。  
 その後、ターミナルで下記を実行する。
@@ -80,7 +80,7 @@ source ~/.zshrc
 
 ## 5. Git エイリアスを設定する
 
-[6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
+元マニュアル: [6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
 
 1. ターミナルを開き、下記を実行して、VSCode で`~/.gitconfig`というファイルを開く。
 
