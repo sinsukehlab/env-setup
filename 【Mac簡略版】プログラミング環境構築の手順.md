@@ -7,9 +7,9 @@
 
 元マニュアル: [1.VSCode をインストールする](./1.VSCodeをインストールする.md)
 
-1. [参考サイト](https://www.javadrive.jp/vscode/install/index1.html)の「Visual Studio Code をダウンロードする」と「Visual Studio Code をインストールする」の項を参考にインストールする。
+1. [参考サイト](https://qiita.com/watamura/items/51c70fbb848e5f956fd6)の「1. VSCode のサイトにアクセス」~「6. アプリケーションフォルダから VSCode を開いてください」までを参考にインストールする。
 2. インストールした VSCode を開き、  
-   [shift + command + P] -> [shell command]と入力 -> [シェルコマンド：PATH 内に'code'コマンドをインストールします]を選択。
+   [shift + command + P] -> [shell command]と入力 -> [Shell Command: Install 'code' command in PATH]を選択。
 
 ## 2. Git をインストールする
 
