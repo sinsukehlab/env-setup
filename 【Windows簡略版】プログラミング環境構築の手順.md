@@ -138,3 +138,26 @@ code ~/.gitconfig
     svu = stash save -u
     sp = stash pop
 ```
+
+## 6. VSCode の設定をする
+
+元マニュアル: [7.VSCode の設定をする](./7.VSCodeの設定をする.md)
+
+1. 以下をターミナル(WSL)上で実行し VSCode を**WSL 上で**開く。
+
+```shell
+code ~
+```
+
+2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
+
+- Prettier - Code formatter (コードフォーマッタ)
+- Black Formatter (Python のコードフォーマッタ)
+- Code Spell Checker (英語のタイポを教えてくれる)
+- Git Lens (Git 情報を見やすくしてくれる)
+- Git History (Git のログを見やすくしてくれる)
+- Code Runner (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
+
+3. VSCode 上で[Ctrl+,]/[Command+,] -> "Format On Save"と検索してチェックを入れる。
+4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
+5. [ctrl+shift+P]/[command+shift+P]->[Reload Window]を選択。
