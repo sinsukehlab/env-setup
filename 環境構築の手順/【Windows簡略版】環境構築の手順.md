@@ -1,4 +1,4 @@
-# Windows 簡略版
+# 【Windows 簡略版】環境構築の手順
 
 やっていることの意味は分からなくていいから、具体的にすべきことだけ知りたい場合はこの手順を参照する。  
 意味が知りたいときや、やり方が分からないとき、エラーが起こった際はリンク先の元のマニュアルを見ると詳しい説明が書かれている。
@@ -16,14 +16,15 @@
 1. ターミナルを開く  
    [スタート] -> [すべてのアプリ] –> [ターミナル]をクリック
 
-2. 下記をターミナルにコピペして Enter を押し、処理が終わったら、パソコンを再起動する。  
-   その後開いたターミナルで Linux のアカウントを作る。
+2. 下記をターミナルにコピペして [Enter] を押し、処理が終わったら、パソコンを再起動する。  
+   その後開いたターミナルで Linux のアカウントを作る。  
+   ユーザー名は Windows のものと同じでもよいが、パスワードは頻繁に使うので覚えやすいものが良い。
 
 ```shell
 wsl --install -d Ubuntu-22.04
 ```
 
-3. ターミナルが下の正しい方のように表示されているのを確認する。
+3. ターミナルが下記の「正しい方」のように表示されているのを確認する。
 
 ```shell
 # 正しい方
@@ -36,7 +37,8 @@ PS C:\Users\Windowsのユーザー名>
 wsl
 ```
 
-4. その後、下記をターミナルにコピペして Enter。  
+4. その後、下記をターミナルにコピペして [Enter]。  
+   パスワードを求められるので Linux のパスワードを入力する。  
    最後に設定画面が表示されたら、`2`と入力する。
 
 ```shell
@@ -51,8 +53,8 @@ zsh
 
 元マニュアル: [4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
 
-1. 下記をコピペして Enter。  
-   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して Enter.  
+1. 下記をコピペして [Enter]。  
+   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して [Enter].  
    うまくいかないときは URL が変わっているかもしれないので、[公式サイト](https://ohmyz.sh/#install)を見る。
 
 ```shell
@@ -78,7 +80,7 @@ cp ./simplerich-zsh-theme/simplerich.zsh-theme ~/.oh-my-zsh/themes/
 code ~/.zshrc
 ```
 
-4. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換え、Ctrl+S/Command+S で保存。  
+4. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換え、 [Ctrl+S] で保存。  
    その後、VSCode を閉じる。
 
 ```shell
@@ -99,9 +101,9 @@ sudo apt -y install bc
 
 以下を実行する。  
 URL は最新版ではない可能性があるので、エラーになるときは[参考サイト](https://www.salesanalytics.co.jp/datascience/datascience141/#LinuxAnaconda)を見て最新版を取得する。  
-途中`Please, press ENTER to continue`と言われたら Enter を押し、下矢印キーでライセンス条項を一番下まで降り、yes と入力して Enter を押す。  
-次にインストール場所を聞かれるが、デフォルトのままでよいのでそのまま Enter を押す。  
-最後に、Anaconda3 の初期化をするか聞かれるので、yes と答える。
+途中`Please, press ENTER to continue`と言われたら [Enter] を押し、下矢印キーでライセンス条項を一番下まで降り、`yes`と入力して [Enter] を押す。  
+次にインストール場所を聞かれるが、デフォルトのままでよいのでそのまま [Enter] を押す。  
+最後に、Anaconda3 の初期化をするか聞かれるので、`yes`と答える。
 
 ```shell
 cd ~
@@ -121,7 +123,7 @@ source ~/.zshrc
 code ~/.gitconfig
 ```
 
-2. 下記を一番下に追記して、 Ctrl+S/Command+S で保存。
+2. 下記を一番下に追記して、 [Ctrl+S] で保存。
 
 ```shell
 [alias]
@@ -158,6 +160,6 @@ code ~
 - Git History (Git のログを見やすくしてくれる)
 - Code Runner (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
 
-3. VSCode 上で[Ctrl+,]/[Command+,] -> "Format On Save"と検索してチェックを入れる。
+3. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
 4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-5. [ctrl+shift+P]/[command+shift+P]->[Reload Window]を選択。
+5. [Ctrl+Shift+P]->[Reload Window]を選択。

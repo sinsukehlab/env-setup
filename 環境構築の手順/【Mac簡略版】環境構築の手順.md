@@ -1,4 +1,4 @@
-# Mac 簡略版
+# 【Mac 簡略版】環境構築の手順
 
 やっていることの意味は分からなくていいから、具体的にすべきことだけ知りたい場合はこの手順を参照する。  
 意味が知りたいときや、やり方が分からないとき、エラーが起こった際はリンク先の元のマニュアルを見ると詳しい説明が書かれている。
@@ -9,21 +9,21 @@
 
 1. [参考サイト](https://qiita.com/watamura/items/51c70fbb848e5f956fd6)の「1. VSCode のサイトにアクセス」~「6. アプリケーションフォルダから VSCode を開いてください」までを参考にインストールする。
 2. インストールした VSCode を開き、  
-   [shift + command + P] -> [shell command]と入力 -> [Shell Command: Install 'code' command in PATH]を選択。
+   [Command+Shift+P] -> "shell command"と入力 -> [Shell Command: Install 'code' command in PATH]を選択。
 
 ## 2. Git をインストールする
 
 元マニュアル: [3.(Mac のみ)Git をインストールする](<./3.(Macのみ)Gitをインストールする.md>)
 
 [参考サイト](https://prog-8.com/docs/git-env)を参考にインストールする。  
-なお、現時点ではユーザー名とメールアドレスの設定まではしなくても、ターミナル上で`git --version`を入力して Enter を押したときにバージョンが表示されれ(エラーが起こらなけれ)ばよい。
+なお、現時点ではユーザー名とメールアドレスの設定まではしなくても、ターミナル上で`git --version`を入力して [Enter] を押したときにバージョンが表示されれ(エラーが起こらなけれ)ばよい。
 
 ## 3. Oh My Zsh をインストールする
 
 元マニュアル: [4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
 
-1. 下記をコピペして Enter。  
-   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して Enter.  
+1. 下記をコピペして [Enter]。  
+   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して [Enter].  
    うまくいかないときは URL が変わっているかもしれないので、[公式サイト](https://ohmyz.sh/#install)を見る。
 
 ```shell
@@ -49,7 +49,7 @@ cp ./simplerich-zsh-theme/simplerich.zsh-theme ~/.oh-my-zsh/themes/
 code ~/.zshrc
 ```
 
-4. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換え、Ctrl+S/Command+S で保存。  
+4. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換え、 [Command+S] で保存。  
    その後、VSCode を閉じる。
 
 ```shell
@@ -88,7 +88,7 @@ source ~/.zshrc
 code ~/.gitconfig
 ```
 
-2. 下記を一番下に追記して、 Ctrl+S/Command+S で保存。
+2. 下記を一番下に追記して、 [Command+S] で保存。
 
 ```shell
 [alias]
@@ -120,6 +120,6 @@ code ~/.gitconfig
 - Git History (Git のログを見やすくしてくれる)
 - Code Runner (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
 
-3. VSCode 上で[Ctrl+,]/[Command+,] -> "Format On Save"と検索してチェックを入れる。
+3. VSCode 上で [Command+,] -> "Format On Save"と検索してチェックを入れる。
 4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-5. [ctrl+shift+P]/[command+shift+P]->[Reload Window]を選択。
+5. [Command+Shift+P] -> [Reload Window]を選択。
