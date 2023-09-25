@@ -100,7 +100,7 @@ code ~/.gitconfig
     b = branch
     co = checkout
     cob = checkout -b
-    sh = stash
+    sl = stash list
     su = stash -u
     svu = stash save -u
     sp = stash pop
