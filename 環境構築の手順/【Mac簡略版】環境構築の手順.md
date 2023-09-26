@@ -1,7 +1,7 @@
 # 【Mac 簡略版】環境構築の手順
 
 やっていることの意味は分からなくていいから、具体的にすべきことだけ知りたい場合はこの手順を参照する。  
-意味が知りたいときや、やり方が分からないとき、エラーが起こった際はリンク先の元のマニュアルを見ると詳しい説明が書かれている。
+意味が知りたいときや、やり方が分からないとき、エラーが起こったときはリンク先の元のマニュアルを見ると詳しい説明や対処法が書かれている。
 
 ## 1. VSCode をインストールする
 
@@ -11,26 +11,35 @@
 2. インストールした VSCode を開き、  
    [Command+Shift+P] -> "shell command"と入力 -> [Shell Command: Install 'code' command in PATH]を選択。
 
-## 2. Git をインストールする
+## 2. (Windows のみ) WSL2 をインストールする
+
+Mac ではこの手順はしなくてよい。
+
+## 3. Git をインストールする
 
 元マニュアル: [3.(Mac のみ)Git をインストールする](<./3.(Macのみ)Gitをインストールする.md>)
 
 [参考サイト](https://prog-8.com/docs/git-env)を参考にインストールする。  
-なお、現時点ではユーザー名とメールアドレスの設定まではしなくても、ターミナル上で`git --version`を入力して [Enter] を押したときにバージョンが表示されれ(エラーが起こらなけれ)ばよい。
+なお、現時点では「2. Git のインストール」まで出来ていればよく、ターミナル上で`git --version`を入力して [Enter] を押したときにバージョンが表示されれ(エラーが起こらなけれ)ばよい。
 
-## 3. Oh My Zsh をインストールする
+## 4. Oh My Zsh をインストールする
 
 元マニュアル: [4.Oh My Zsh をインストールする](<./4.Oh My Zshをインストールする.md>)
 
-1. 下記をコピペして [Enter]。  
-   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して [Enter].  
-   うまくいかないときは URL が変わっているかもしれないので、[公式サイト](https://ohmyz.sh/#install)を見る。
+1. [公式マニュアル](https://support.apple.com/ja-jp/guide/terminal/apd5265185d-f365-44cb-8b09-71a064a42125/mac)を参考にしてターミナルを開く。
+
+> Mac で、以下のいずれかの操作を行います:  
+> Dock で Launchpad のアイコン <img src="https://help.apple.com/assets/63D8162D4F5E9E311D0CFA28/63D816334F5E9E311D0CFA30/ja_JP/a1f94c9ca0de21571b88a8bf9aef36b8.png" alt="" height="30" width="30" originalimagename="SharedGlobalArt/AppIconTopic_Launchpad.png"> をクリックして、検索フィールドに「ターミナル」と入力してから、「ターミナル」をクリックします。  
+> Finder <img src="https://help.apple.com/assets/63D8162D4F5E9E311D0CFA28/63D816334F5E9E311D0CFA30/ja_JP/058e4af8e726290f491044219d2eee73.png" alt="" height="30" width="30" originalimagename="SharedGlobalArt/AppIconTopic_Finder.png"> で、「/アプリケーション/ユーティリティ」フォルダを開いてから、「ターミナル」をダブルクリックします。
+
+2. ターミナルに下記をコピペして [Enter]を押す。  
+   デフォルトシェルを Zsh にするか聞かれた場合は`y`と入力して [Enter].
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-2. 以下を実行。
+3. 以下を実行。
 
 ```shell
 cd ~/.oh-my-zsh/plugins/
@@ -43,29 +52,55 @@ git clone --recursive https://github.com/philip82148/simplerich-zsh-theme
 cp ./simplerich-zsh-theme/simplerich.zsh-theme ~/.oh-my-zsh/themes/
 ```
 
-3. 下記を実行して VSCode で`~/.zshrc`というファイルを開く。
+4. 下記を実行して VSCode で`~/.zshrc`というファイルを開く。
 
 ```shell
 code ~/.zshrc
 ```
 
-4. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換え、 [Command+S] で保存。  
-   その後、VSCode を閉じる。
+5. `ZSH_THEME="robbyrussell"`という行を探し、以下の 2 行に置き換える。
 
 ```shell
 ZSH_THEME="simplerich"
 source ~/simplerich-zsh-theme/zsh-git-prompt/zshrc.sh
 ```
 
-5. 下記をターミナルで実行する。
+6.  `plugins=(git)`という行を探し、以下に置き換え、 [Command+S] で保存。  
+    その後、VSCode を閉じる。
 
 ```shell
-source ~/.zshrc
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-brew install coreutil
+plugins=(
+   git
+   zsh-syntax-highlighting
+   zsh-completions
+   zsh-autosuggestions
+   zsh-history-substring-search
+)
 ```
 
-## 4. Anaconda をインストールする
+7. 下記をターミナルで実行する。画面の指示に従って[Enter]を押す。
+
+```shell
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
+場合によっては最後に、`Run these two commands in your terminal to add Homebrew to your PATH:`と言ってくるので、その下の 2 行を実行する。  
+(ない場合は気にしなくてよい。)
+
+```shell
+# これは例。実際に実行するのはインストーラが示したコマンドにすること。
+(echo; echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"') >> /home/testuser/.zprofile
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+```
+
+8. 下記をターミナルで実行する。
+
+```shell
+brew install coreutils
+source ~/.zshrc
+```
+
+## 5. Anaconda をインストールする
 
 元マニュアル: [5.Anaconda をインストールする](./5.Anacondaをインストールする.md)
 
@@ -78,7 +113,7 @@ conda config --set changeps1 False
 source ~/.zshrc
 ```
 
-## 5. Git エイリアスを設定する
+## 6. Git エイリアスを設定する
 
 元マニュアル: [6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
 
@@ -88,7 +123,8 @@ source ~/.zshrc
 code ~/.gitconfig
 ```
 
-2. 下記を一番下に追記して、 [Command+S] で保存。
+2. 下記を書き込んで、[Command+S] で保存。  
+   なお、すでに書き込みがある場合は一番下に追記する。
 
 ```shell
 [alias]
@@ -106,7 +142,7 @@ code ~/.gitconfig
     sp = stash pop
 ```
 
-## 6. VSCode の設定をする
+## 7. VSCode の設定をする
 
 元マニュアル: [7.VSCode の設定をする](./7.VSCodeの設定をする.md)
 
