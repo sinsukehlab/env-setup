@@ -185,3 +185,36 @@ code ~
 3. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
 4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
 5. [Ctrl+Shift+P]->[Reload Window]を選択。
+
+## 8. Git の認証情報を設定する
+
+元マニュアル: [8.Git の認証情報を設定する](./8.Gitの認証情報を設定する.md)
+
+1. [参考サイト](https://yakiimosan.com/github-account-create/)を参考に[GitHub](https://github.co.jp/)のアカウントを作る。
+
+2. 以下をターミナルで実行する。
+
+```shell
+sudo apt -y install gh
+gh auth login
+```
+
+3. いくつか質問されるので以下のように答える。
+
+```console
+What account do you want to log into?
+ -> GitHub.com
+What is your preferred protocol for Git operations?
+ -> HTTPS
+Authenticate Git with your GitHub credentials?
+ -> Y
+How would you like to authenticate GitHub CLI?
+ -> Login with a web browser
+First copy your one-time code: XXXX-XXXX
+ -> XXXX-XXXXの部分をコピーする
+Press Enter to open github.com in your browser...
+```
+
+4. [Enter] を押す。  
+   ブラウザが自動で開かれるはずだが、開かなかったら直接 [https://github.com/login/device](https://github.com/login/device) を開く。  
+   その後、コピーしたコードを張り付けて認証する。
