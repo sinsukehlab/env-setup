@@ -172,12 +172,12 @@ code ~
 
 2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
 
-- Prettier - Code formatter (コードフォーマッタ)
-- Black Formatter (Python のコードフォーマッタ)
-- Code Spell Checker (英語のタイポを教えてくれる)
-- Git Lens (Git 情報を見やすくしてくれる)
-- Git History (Git のログを見やすくしてくれる)
-- Code Runner (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
+- [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
+- [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
+- [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) (英語のタイポを教えてくれる)
+- [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) (Git 情報を見やすくしてくれる)
+- [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (Git のログを見やすくしてくれる)
+- [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
 
 3. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
 4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
