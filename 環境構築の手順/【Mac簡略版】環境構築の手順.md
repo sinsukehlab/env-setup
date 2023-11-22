@@ -104,7 +104,7 @@ source ~/.zshrc
 
 元マニュアル: [5.Python の環境構築をする](./5.Pythonの環境構築をする.md)
 
-以下を実行する。
+以下をターミナルで実行する。
 
 ```shell
 brew install xz

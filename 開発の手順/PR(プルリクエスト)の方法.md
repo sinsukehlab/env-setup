@@ -36,7 +36,7 @@ git co main
 ```
 
 2. リモートの`main`ブランチの内容をローカルに反映する。  
-   下記を実行する。
+   下記をターミナルで実行する。
 
 ```shell
 git pull origin main

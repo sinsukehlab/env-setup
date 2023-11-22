@@ -50,7 +50,7 @@ wsl
 
 参考:[このサイト](https://www.salesanalytics.co.jp/datascience/datascience141/#LinuxAnaconda)の「Linux 版の Anaconda をインストール」の見出しから
 
-> 以下を実行する。  
+> 以下をターミナルで実行する。  
 > URL は最新版ではない可能性があるので、エラーになるときは参考サイトを見て最新版を取得する。
 >
 > 途中`Please, press ENTER to continue`と言われたら [Enter] を押し、下矢印キーでライセンス条項を一番下まで降り、`yes`と入力して [Enter] を押す。  
@@ -83,7 +83,7 @@ wsl
 
 #### Windows/Mac 共通
 
-下記を実行する。  
+下記をターミナルで実行する。  
 具体的には、Anaconda の仮想環境が自動でアクティベートされるのを停止しているのと、ターミナルの先頭の(base)の表示を消している。
 
 ```shell
