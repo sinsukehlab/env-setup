@@ -189,14 +189,27 @@ code ~
 
 1. [参考サイト](https://yakiimosan.com/github-account-create/)を参考に[GitHub](https://github.co.jp/)のアカウントを作る。
 
-2. 以下をターミナルで実行する。
+2. 以下の 2 つをターミナルで実行する。日本語の部分は書き換えること。  
+   **これらは外部に公開される。**それが嫌な場合は任意のメールと名前を設定してよい。  
+   メールに関しては GitHub 側が用意したメールを使うこともできる。  
+   詳しくは元マニュアルを参照。
+
+```shell
+git config --global user.email "GitHubアカウントのメールアドレス"
+```
+
+```shell
+git config --global user.name "GitHubアカウントのID"
+```
+
+3. 以下をターミナルで実行する。
 
 ```shell
 sudo apt -y install gh
 gh auth login
 ```
 
-3. いくつか質問されるので以下のように答える。
+4. いくつか質問されるので以下のように答える。
 
 ```console
 What account do you want to log into?
@@ -212,6 +225,6 @@ First copy your one-time code: XXXX-XXXX
 Press Enter to open github.com in your browser...
 ```
 
-4. [Enter] を押す。  
+5. [Enter] を押す。  
    ブラウザが自動で開かれるはずだが、開かなかったら直接 [https://github.com/login/device](https://github.com/login/device) を開く。  
    その後、コピーしたコードを張り付けて認証する。
