@@ -153,6 +153,7 @@ code ~/.gitconfig
     b = branch
     co = checkout
     cob = checkout -b
+    l = log
     sl = stash list
     su = stash -u
     svu = stash save -u

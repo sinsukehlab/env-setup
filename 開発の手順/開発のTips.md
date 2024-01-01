@@ -124,6 +124,7 @@ git push origin main
 
 ```shell
 git log
+# このマニュアルではgit lというエイリアスも設定してある
 ```
 
 ### コミットの取り消しは`git reset`と`git push --force-with-lease`
