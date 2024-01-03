@@ -22,7 +22,7 @@
 
 1.`main`ブランチにいることを確認する。  
  ローカルリポジトリ内でターミナルを開いたとき、プロンプトの`[Git情報]`の部分に`[main]`と表示されていることを確認する。  
- 表示されていない場合は`git co main`というコマンドを実行する。
+ 表示されていない場合は`g co main`というコマンドを実行する。
 
 ```console
 [時刻] ユーザー名 (Python仮想環境名) ワーキングディレクトリ [Git情報]
@@ -32,14 +32,14 @@ $
 ```shell
 # [main]と表示されていない場合は下記を実行する
 # 本来はgit checkout mainというコマンド
-git co main
+g co main
 ```
 
 2. リモートの`main`ブランチの内容をローカルに反映する。  
    下記をターミナルで実行する。
 
 ```shell
-git pull origin main
+g pull origin main
 ```
 
 ここでエラーが起こった際はリモートに無い変更がローカルの`main`ブランチにあるということである。  
@@ -55,7 +55,7 @@ git pull origin main
 ```shell
 # 新しくブランチを作り、そのブランチに切り替える
 # 本来はgit checkout -b ブランチ名というコマンド
-git cob ブランチ名
+g cob ブランチ名
 ```
 
 なお、ブランチに関して、他に以下のようなコマンドがある。
@@ -63,11 +63,11 @@ git cob ブランチ名
 ```shell
 # すでにあるブランチに切り替える
 # 本来はgit checkout ブランチ名というコマンド
-git co ブランチ名
+g co ブランチ名
 
 # ローカルにあるブランチの一覧を取得する
 # 本来はgit branchというコマンド
-git b
+g b
 ```
 
 ## 3. コードを編集してコミットする
@@ -97,7 +97,7 @@ PR はサブブランチ(`main`でないブランチ)を`main`ブランチにマ
 または以下のコマンドでエラーが起きたとき、このコンフリクトが発生している(ただし`main`ブランチで下記を実行してエラーになった場合は[リモートの`main`ブランチとローカルの`main`ブランチの間で起きたコンフリクトの場合](#リモートのmainブランチとローカルのmainブランチの間で起きたコンフリクトの場合)を参照)。
 
 ```shell
-git pull origin main
+g pull origin main
 # エラー！
 ```
 
@@ -107,10 +107,10 @@ git pull origin main
 
 ```shell
 # リモートのmainの内容を取得する
-git fetch origin main
+g fetch origin main
 
 # ローカルに自動マージをする(新たなコミットが作られる)
-git merge origin main
+g merge origin main
 ```
 
 2. 上のコマンドで自動でマージできた場合は、WSL では nano、Mac では vim というコンソール上のエディタが起動し、コミットメッセージの編集を求められる。  
@@ -120,14 +120,14 @@ git merge origin main
    しかし、自動マージできない場合もある。  
    その場合は VSCode の Merge Editor を使って自動マージできなかったファイルを編集し、最後に GUI からコミットを行ってマージする。
 
-   [Merge Editor の使い方](https://futureys.tokyo/lets-resolve-conflict-on-git-by-vs-code-3-way-merge-editor/)
+   [Merge Editor の使い方](https://futureys.tokyo/lets-resolve-conflict-on-g-by-vs-code-3-way-merge-editor/)
 
 3. ローカルで行われた変更をリモートに反映する。
    以下のコマンドで、ローカルの内容をリモートに反映させることができる。  
    ここで、ブランチ名は`main`ではなく自分のブランチ名なので気を付けること。
 
 ```shell
-git push origin ブランチ名
+g push origin ブランチ名
 ```
 
 ### リモートブランチとローカルブランチの間で起きたコンフリクトの場合
@@ -135,7 +135,7 @@ git push origin ブランチ名
 一つのブランチを複数人で編集した際等に、以下のコマンドでエラーが起き、このコンフリクトが発生する(ただし`main`ブランチで下記を実行してエラーになった場合は[リモートの`main`ブランチとローカルの`main`ブランチの間で起きたコンフリクトの場合](#リモートのmainブランチとローカルのmainブランチの間で起きたコンフリクトの場合)を参照)。
 
 ```shell
-git pull origin ブランチ名
+g pull origin ブランチ名
 # エラー！
 ```
 
@@ -145,10 +145,10 @@ git pull origin ブランチ名
 
 ```shell
 # リモートブランチの内容を取得する
-git fetch origin ブランチ名
+g fetch origin ブランチ名
 
 # ローカルに自動マージをする(新たなコミットが作られる)
-git merge origin ブランチ名
+g merge origin ブランチ名
 ```
 
 2. 以降の手順は[サブブランチと`main`ブランチの間に起きたコンフリクトの場合](#サブブランチとmainブランチの間に起きたコンフリクトの場合)と同じ。
@@ -167,17 +167,17 @@ git merge origin ブランチ名
 ```shell
 # 変更を退避させる
 # 本来はgit stash -uというコマンド
-git su
+g su
 
 # エラーにならない
-git pull origin main
+g pull origin main
 
 # ブランチを切るなどする
-git cob ブランチ名
+g cob ブランチ名
 
 # 変更を任意のタイミングで戻す
 # 本来はgit stash popというコマンド
-git sp
+g sp
 ```
 
 #### コミット済みの変更がある(`[main x|y]`という状態)場合
@@ -189,21 +189,21 @@ git sp
 
 ```shell
 # リモートリポジトリにない変更がなくなるまで(`[main x|0]`という表記になるまで)このコマンドを繰り返す
-git reset HEAD^ --soft
+g reset HEAD^ --soft
 
 # 変更を退避させる
 # 本来はgit stash -uというコマンド
-git su
+g su
 
 # エラーにならない
-git pull origin main
+g pull origin main
 
 # ブランチを切るなどする
-git cob ブランチ名
+g cob ブランチ名
 
 # 変更を任意のタイミングで戻す
 # 本来はgit stash popというコマンド
-git sp
+g sp
 ```
 
 - [サブブランチと`main`ブランチの間に起きたコンフリクトの場合](#サブブランチとmainブランチの間に起きたコンフリクトの場合)と同じように処理する。  
@@ -213,5 +213,5 @@ git sp
 2. なお、最後のローカルで行われた変更をリモートに反映する際のブランチ名は`main`とする。
 
 ```shell
-git push origin main
+g push origin main
 ```

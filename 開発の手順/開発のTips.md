@@ -35,7 +35,7 @@ $
 
 ```shell
 # リモートリポジトリの情報を取得する
-git fetch
+g fetch
 ```
 
 ## 2. 入力を便利にする Zsh の機能
@@ -48,10 +48,10 @@ git fetch
 ターミナルへのコマンドの入力中に上矢印キーを打つと、今まで打ったコマンドを呼び出せる。
 
 ```shell
-gi
+g p
 # ここまで打った後に上矢印キーを押すと...
-git push origin main
-# giから始まる今まで打ったコマンドが新しい順に出てくる
+g push origin main
+# g pから始まる今まで打ったコマンドが新しい順に出てくる
 ```
 
 ### タブキーで補完(予測入力)が可能
@@ -75,7 +75,7 @@ cd ~/simplerich-zsh-theme/zsh-git-prompt
 [Ctrl+U](Windows/Mac 共通)は打ったコマンドを全部削除するショートカットキーである
 
 ```shell
-git push origin ma
+g push origin ma
 # やっぱり別のコマンドが実行したい、Ctrl+U
 
 # (全部消えた)
@@ -108,11 +108,11 @@ cd ~/projects/testrepo
 mkdir sub_folder
 
 # リポジトリ直下で実行しても
-git push origin main
+g push origin main
 
 # サブディレクトリ内で実行しても
 cd sub_folder
-git push origin main
+g push origin main
 
 # 同じ効果を持つ
 ```
@@ -123,8 +123,19 @@ git push origin main
 下矢印キーでさかのぼることができ、終了する際は`q`を押す。
 
 ```shell
-git log
-# このマニュアルではgit lというエイリアスも設定してある
+# 本来はgit logというコマンド
+g l
+```
+
+なお、`git log`の表示をより見やすくしたものとして、他に以下の二つのエイリアスが設定されている。
+
+```shell
+# 各コミットを1行ずつにして表示する
+# 定義は省略
+g lp
+# 各コミットを1行ずつにして、変更したファイルも表示する
+# 定義は省略
+g lpn
 ```
 
 ### コミットの取り消しは`git reset`と`git push --force-with-lease`
@@ -134,15 +145,15 @@ git log
 ```shell
 # 直前のコミットを無かったことにする
 # (ステージング直前まで戻る場合)
-git reset HEAD^
+g reset HEAD^
 
 # 直前のコミットを無かったことにする
 # (ステージング直後まで戻る場合)
-git reset HEAD^ --soft
+g reset HEAD^ --soft
 
 # 直前のコミットを無かったことにする
 # (ファイルを書き換えて完全になくす場合)
-git reset HEAD^ --hard
+g reset HEAD^ --hard
 ```
 
 `HEAD`は一番最後のコミットという意味で、`HEAD^`はその直前のコミットという意味である。  
@@ -151,18 +162,18 @@ git reset HEAD^ --hard
 
 ```shell
 # コミットIDのコミットをした状態まで戻る
-# コミットIDは 5bd085aebda774d616aa9cea2954d14183fefc6e のようなハッシュ値
+# コミットIDは 5bd085aebda774d616aa9cea2954d14183fefc6e または 5bd085a のようなハッシュ値
 # オプションは任意に変えてよい
-git reset コミットID --soft
+g reset コミットID --soft
 ```
 
 ローカルの変更はこれで消えるが、`git push`までしていて、リモートに反映した変更も消す必要があるときは、以下のようにして消す。
 
 ```shell
 # 実行には注意が必要
-git push origin ブランチ名 --force-with-lease
+g push origin ブランチ名 --force-with-lease
 # または
-git push origin ブランチ名 --force
+g push origin ブランチ名 --force
 # --force-with-leaseの方が安全だが--forceの方が出来ることが多い
 # 違いに関してはネットで調べること。
 ```
@@ -172,7 +183,7 @@ git push origin ブランチ名 --force
 特に、複数人で作業しているリポジトリの`main`ブランチに対してこれをやることは避けたほうが良い。
 
 代わりに、`git revert`といって、「コミットを打ち消すコミットを生成する」コマンドがある。  
-これならやっていることはコミットの取り消しではなく追加であるので、通常の`git push origin ブランチ名`でリモートリポジトリに反映させることができる。  
+これならやっていることはコミットの取り消しではなく追加であるので、通常の`g push origin ブランチ名`でリモートリポジトリに反映させることができる。  
 なお、`git revert`の実際の使い方はネットで調べてほしい。
 
 ### 変更せずに過去の履歴を覗く場合は`git checkout`
@@ -181,10 +192,10 @@ git push origin ブランチ名 --force
 # コミットIDの状態にファイルを変更する
 # ただし、このモードでは編集ができない
 # 本来はgit checkout コミットID
-git co コミットID
+g co コミットID
 
 # 戻る場合はブランチ名を指定する
-git co ブランチ名
+g co ブランチ名
 ```
 
 ### 間違えて`git reset`した場合は`git reflog`
@@ -194,7 +205,7 @@ git co ブランチ名
 
 ```shell
 # git reflogで操作履歴を見る
-git reflog
+g reflog
 
 # 今までの操作の履歴(reset, commit, checkout等)が見れるので、
 # 間違えてresetする直前の操作のHEAD@{n}という数字を覚える。
@@ -202,7 +213,7 @@ git reflog
 # 終了はqを押す
 
 # そして、下記を実行する。オプションは任意に変えてよい。
-git reset HEAD@{2} --hard
+g reset HEAD@{2} --hard
 ```
 
 ### その他
@@ -222,14 +233,14 @@ PR を立てる必要があるのに間違えて`main`ブランチに変更を�
 # 変更を退避させる
 # 退避は何度でもできる
 # 本来はgit stash -uというコマンド
-git su
+g su
 
 # 変更を任意のタイミングで戻す
 # 戻す変更は最後に退避させたものから
 # 本来はgit stash popというコマンド
-git sp
+g sp
 
 # 退避させた変更の一覧を見る
 # 本来はgit stash listというコマンド
-git sl
+g sl
 ```
