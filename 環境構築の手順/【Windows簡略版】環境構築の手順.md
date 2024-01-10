@@ -144,21 +144,21 @@ code ~/.zshrc
 
 ```shell
 alias g=git
-alias ga=git add
-alias gc=git commit
-alias gcm=git commit -m
-alias gad=git commit --amend
-alias gadm=git commit --amend -m
-alias gb=git branch
-alias gco=git checkout
-alias gcob=git checkout -b
-alias gl=git log
-alias glp=git log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
-alias glpn=git log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
-alias gsl=git stash list
-alias gsu=git stash -u
-alias gsvu=git stash save -u
-alias gsp=git stash pop
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
+alias gad='git commit --amend'
+alias gadm='git commit --amend -m'
+alias gb='git branch'
+alias gco='git checkout'
+alias gcob='git checkout -b'
+alias gl='git log'
+alias glp='git log --graph --pretty=format:"%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset"'
+alias glpn='git log --graph --pretty=format:"%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset" --name-status'
+alias gsl='git stash list'
+alias gsu='git stash -u'
+alias gsvu='git stash save -u'
+alias gsp='git stash pop'
 ```
 
 3. ターミナルで下記を実行する。
