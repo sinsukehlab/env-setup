@@ -119,36 +119,41 @@ echo "export VIRTUAL_ENV_DISABLE_PROMPT=1" >> ~/.zshrc
 source ~/.zshrc
 ```
 
-## 6. Git エイリアスを設定する
+## 6. エイリアスを設定する
 
-元マニュアル: [6.Git エイリアスを設定する](./6.Gitエイリアスを設定する.md)
+元マニュアル: [6.エイリアスを設定する](./6.エイリアスを設定する.md)
 
-1. ターミナルを開き、下記を実行して、VSCode で`~/.gitconfig`というファイルを開く。
+1. ターミナルを開き、下記を実行して、VSCode で`~/.zshrc`というファイルを開く(先ほど[4. Oh My Zsh をインストールする](#4-oh-my-zsh-をインストールする)で開いたものと同じファイルである)。
 
 ```shell
-code ~/.gitconfig
+code ~/.zshrc
 ```
 
-2. 下記を書き込んで、[Command+S] で保存。  
-   なお、すでに書き込みがある場合は一番下に追記する。
+2. 下記を一番最後に追記して、[Command+S] で保存する。
 
 ```shell
-[alias]
-    a = add
-    c = commit
-    cm = commit -m
-    ad = commit --amend
-    adm = commit --amend -m
-    b = branch
-    co = checkout
-    cob = checkout -b
-    l = log
-    lp = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
-    lpn = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
-    sl = stash list
-    su = stash -u
-    svu = stash save -u
-    sp = stash pop
+alias g=git
+alias ga=git add
+alias gc=git commit
+alias gcm=git commit -m
+alias gad=git commit --amend
+alias gadm=git commit --amend -m
+alias gb=git branch
+alias gco=git checkout
+alias gcob=git checkout -b
+alias gl=git log
+alias glp=git log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset'
+alias glpn=git log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
+alias gsl=git stash list
+alias gsu=git stash -u
+alias gsvu=git stash save -u
+alias gsp=git stash pop
+```
+
+3. ターミナルで下記を実行する。
+
+```shell
+source ~/.zshrc
 ```
 
 ## 7. VSCode の設定をする
