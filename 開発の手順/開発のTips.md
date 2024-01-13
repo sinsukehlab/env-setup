@@ -196,12 +196,11 @@ g push origin ブランチ名 --force
 # コミットIDの状態にファイルを変更する
 # ただし、このモードでは編集ができない
 # 本来はgit checkout コミットID
+# gcoはg coとしてもよし
 gco コミットID
 
 # 戻る場合はブランチ名を指定する
 gco ブランチ名
-
-# gcoはg coとしてもよし
 ```
 
 ### 間違えて`git reset`した場合は`git reflog`
