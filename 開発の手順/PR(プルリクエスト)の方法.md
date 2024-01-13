@@ -32,6 +32,7 @@ $
 ```shell
 # [main]と表示されていない場合は下記を実行する
 # 本来はgit checkout mainというコマンド
+# gcoはg coでもよい
 gco main
 ```
 
@@ -55,6 +56,7 @@ g pull origin main
 ```shell
 # 新しくブランチを作り、そのブランチに切り替える
 # 本来はgit checkout -b ブランチ名というコマンド
+# gcobはg cobでもよい
 gcob ブランチ名
 ```
 
@@ -67,6 +69,7 @@ gco ブランチ名
 
 # ローカルにあるブランチの一覧を取得する
 # 本来はgit branchというコマンド
+# g bでもよい
 gb
 ```
 
@@ -167,6 +170,7 @@ g merge origin ブランチ名
 ```shell
 # 変更を退避させる
 # 本来はgit stash -uというコマンド
+# g suでもよい
 gsu
 
 # エラーにならない
@@ -177,6 +181,7 @@ gcob ブランチ名
 
 # 変更を任意のタイミングで戻す
 # 本来はgit stash popというコマンド
+# g spでもよい
 gsp
 ```
 
@@ -193,6 +198,7 @@ g reset HEAD^ --soft
 
 # 変更を退避させる
 # 本来はgit stash -uというコマンド
+# g suでもよい
 gsu
 
 # エラーにならない
@@ -203,6 +209,7 @@ gcob ブランチ名
 
 # 変更を任意のタイミングで戻す
 # 本来はgit stash popというコマンド
+# g spでもよい
 gsp
 ```
 
