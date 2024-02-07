@@ -188,6 +188,9 @@ alias gsl='git sl'
 alias gsu='git su'
 alias gsvu='git svu'
 alias gsp='git sp'
+alias greset='git reset'
+alias gpull='git pull'
+alias gpush='git push'
 ```
 
 5. ターミナルで下記を実行する。
