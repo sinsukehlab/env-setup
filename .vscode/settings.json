@@ -10,9 +10,13 @@
     "gpush",
     "greset",
     "gsvu",
+    "isort",
+    "noqa",
+    "numpy",
     "pyenv",
     "reflog",
     "robbyrussell",
+    "scipy",
     "simplerich",
     "testrepo",
     "venv"
