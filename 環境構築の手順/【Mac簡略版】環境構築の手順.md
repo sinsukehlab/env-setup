@@ -195,8 +195,6 @@ source ~/.zshrc
 1. VSCode を開く。
 2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
 
-※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
-
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
 - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
 - [isort](https://marketplace.visualstudio.com/items?itemName=ms-python.isort) (Python のコードフォーマッタ)
@@ -206,8 +204,13 @@ source ~/.zshrc
 - [Git History](https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory) (Git のログを見やすくしてくれる)
 - [Code Runner](https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner) (コードの(コンパイルと)実行をショートカットキーで行えるようにする)
 
-3. [Command+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
-4. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
+※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
+
+3. VSCode 上で [Command+,] -> "Format On Save"と検索してチェックを入れる。
+4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
+5. [Command+Shift+P] -> [Reload Window]を選択。
+6. [Command+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
+7. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
 
 ```json
 {
@@ -218,9 +221,7 @@ source ~/.zshrc
 }
 ```
 
-5. VSCode 上で [Command+,] -> "Format On Save"と検索してチェックを入れる。
-6. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-7. [Command+Shift+P] -> [Reload Window]を選択。
+8. [Command+Shift+P] -> [Reload Window]を選択。
 
 ## 8. Git の認証情報を設定する
 
