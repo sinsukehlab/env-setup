@@ -37,10 +37,11 @@ gco main
 ```
 
 2. リモートの`main`ブランチの内容をローカルに反映する。  
+   `gpull`は`g pull`でもよい。  
    下記をターミナルで実行する。
 
 ```shell
-g pull origin main
+gpull origin main
 ```
 
 ここでエラーが起こった際はリモートに無い変更がローカルの`main`ブランチにあるということである。  
@@ -100,7 +101,7 @@ PR はサブブランチ(`main`でないブランチ)を`main`ブランチにマ
 または以下のコマンドでエラーが起きたとき、このコンフリクトが発生している(ただし`main`ブランチで下記を実行してエラーになった場合は[リモートの`main`ブランチとローカルの`main`ブランチの間で起きたコンフリクトの場合](#リモートのmainブランチとローカルのmainブランチの間で起きたコンフリクトの場合)を参照)。
 
 ```shell
-g pull origin main
+gpull origin main
 # エラー！
 ```
 
@@ -110,10 +111,12 @@ g pull origin main
 
 ```shell
 # リモートのmainの内容を取得する
-g fetch origin main
+# g fetch origin mainでもよい
+gfetch origin main
 
 # ローカルに自動マージをする(新たなコミットが作られる)
-g merge origin main
+# g merge origin mainでもよい
+gmerge origin main
 ```
 
 2. 上のコマンドで自動でマージできた場合は、WSL では nano、Mac では vim というコンソール上のエディタが起動し、コミットメッセージの編集を求められる。  
@@ -127,10 +130,11 @@ g merge origin main
 
 3. ローカルで行われた変更をリモートに反映する。
    以下のコマンドで、ローカルの内容をリモートに反映させることができる。  
+   `gpush`は`g push`でもよい。  
    ここで、ブランチ名は`main`ではなく自分のブランチ名なので気を付けること。
 
 ```shell
-g push origin ブランチ名
+gpush origin ブランチ名
 ```
 
 ### リモートブランチとローカルブランチの間で起きたコンフリクトの場合
@@ -138,7 +142,7 @@ g push origin ブランチ名
 一つのブランチを複数人で編集した際等に、以下のコマンドでエラーが起き、このコンフリクトが発生する(ただし`main`ブランチで下記を実行してエラーになった場合は[リモートの`main`ブランチとローカルの`main`ブランチの間で起きたコンフリクトの場合](#リモートのmainブランチとローカルのmainブランチの間で起きたコンフリクトの場合)を参照)。
 
 ```shell
-g pull origin ブランチ名
+gpull origin ブランチ名
 # エラー！
 ```
 
@@ -148,10 +152,10 @@ g pull origin ブランチ名
 
 ```shell
 # リモートブランチの内容を取得する
-g fetch origin ブランチ名
+gfetch origin ブランチ名
 
 # ローカルに自動マージをする(新たなコミットが作られる)
-g merge origin ブランチ名
+gmerge origin ブランチ名
 ```
 
 2. 以降の手順は[サブブランチと`main`ブランチの間に起きたコンフリクトの場合](#サブブランチとmainブランチの間に起きたコンフリクトの場合)と同じ。
@@ -174,7 +178,7 @@ g merge origin ブランチ名
 gsu
 
 # エラーにならない
-g pull origin main
+gpull origin main
 
 # ブランチを切るなどする
 gcob ブランチ名
@@ -202,7 +206,7 @@ g reset HEAD^ --soft
 gsu
 
 # エラーにならない
-g pull origin main
+gpull origin main
 
 # ブランチを切るなどする
 gcob ブランチ名
@@ -220,5 +224,5 @@ gsp
 2. なお、最後のローカルで行われた変更をリモートに反映する際のブランチ名は`main`とする。
 
 ```shell
-g push origin main
+gpush origin main
 ```

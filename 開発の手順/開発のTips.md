@@ -35,7 +35,7 @@ $
 
 ```shell
 # リモートリポジトリの情報を取得する
-g fetch
+gfetch
 ```
 
 ## 2. 入力を便利にする Zsh の機能
@@ -48,10 +48,10 @@ g fetch
 ターミナルへのコマンドの入力中に上矢印キーを打つと、今まで打ったコマンドを呼び出せる。
 
 ```shell
-g p
+gp
 # ここまで打った後に上矢印キーを押すと...
-g push origin main
-# g pから始まる今まで打ったコマンドが新しい順に出てくる
+gpush origin main
+# gpから始まる今まで打ったコマンドが新しい順に出てくる
 ```
 
 ### タブキーで補完(予測入力)が可能
@@ -75,7 +75,7 @@ cd ~/simplerich-zsh-theme/zsh-git-prompt
 [Ctrl+U](Windows/Mac 共通)は打ったコマンドを全部削除するショートカットキーである
 
 ```shell
-g push origin ma
+gpush origin ma
 # やっぱり別のコマンドが実行したい、Ctrl+U
 
 # (全部消えた)
@@ -115,11 +115,11 @@ cd ~/projects/testrepo
 mkdir sub_folder
 
 # リポジトリ直下で実行しても
-g push origin main
+gpush origin main
 
 # サブディレクトリ内で実行しても
 cd sub_folder
-g push origin main
+gpush origin main
 
 # 同じ効果を持つ
 ```
@@ -182,9 +182,9 @@ g reset コミットID --soft
 
 ```shell
 # 実行には注意が必要
-g push origin ブランチ名 --force-with-lease
+gpush origin ブランチ名 --force-with-lease
 # または
-g push origin ブランチ名 --force
+gpush origin ブランチ名 --force
 # --force-with-leaseの方が安全だが--forceの方が出来ることが多い
 # 違いに関してはネットで調べること。
 ```
@@ -194,7 +194,7 @@ g push origin ブランチ名 --force
 特に、複数人で作業しているリポジトリの`main`ブランチに対してこれをやることは避けたほうが良い。
 
 代わりに、`git revert`といって、「コミットを打ち消すコミットを生成する」コマンドがある。  
-これならやっていることはコミットの取り消しではなく追加であるので、通常の`g push origin ブランチ名`でリモートリポジトリに反映させることができる。  
+これならやっていることはコミットの取り消しではなく追加であるので、通常の`gpush origin ブランチ名`でリモートリポジトリに反映させることができる。  
 なお、`git revert`の実際の使い方はネットで調べてほしい。
 
 ### 変更せずに過去の履歴を覗く場合は`git checkout`
