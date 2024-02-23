@@ -180,6 +180,8 @@ alias gsp='git sp'
 alias greset='git reset'
 alias gpull='git pull'
 alias gpush='git push'
+alias gfetch='git fetch'
+alias gmerge='git merge'
 ```
 
 5. ターミナルで下記を実行する。
