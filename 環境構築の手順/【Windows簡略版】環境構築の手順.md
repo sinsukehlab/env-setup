@@ -212,7 +212,11 @@ source ~/.zshrc
 code ~
 ```
 
-2. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
+2. **VSCode の左下の緑の部分に`WSL: Ubuntu-22.04`と表示されていることを確認する**。  
+   なっていなければ元マニュアルを参照する。  
+   **なお、今後 VSCode を開くときは毎回左下の緑の部分が`WSL: Ubuntu-22.04`と表示されている(VSCode が WSL とつながっている)ことを確認すること。**
+
+3. [公式サイト](https://learn.microsoft.com/ja-jp/power-pages/configure/vs-code-extension#install-visual-studio-code-extension)の「Visual Studio Code 拡張機能のインストール」の項を参考に、以下の拡張機能を検索窓で検索して全てインストールする。
 
 - [Prettier - Code formatter](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode) (コードフォーマッタ)
 - [Black Formatter](https://marketplace.visualstudio.com/items?itemName=ms-python.black-formatter) (Python のコードフォーマッタ)
@@ -225,22 +229,23 @@ code ~
 
 ※リンターが何かについては[Python による開発のあれこれ](../開発の手順/Pythonによる開発のあれこれ.md#1-リンターについて)に記載がある。
 
-3. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
-4. 続けて"Default Formatter"と検索して Prettier を選ぶ。
-5. [Ctrl+Shift+P]->[Reload Window]を選択。
-6. [Ctrl+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
-7. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
+4. VSCode 上で[Ctrl+,] -> "Format On Save"と検索してチェックを入れる。
+5. 続けて"Default Formatter"と検索して Prettier を選ぶ。
+6. [Ctrl+Shift+P]->[Reload Window]を選択。
+7. [Ctrl+Shift+P]->[Preferences: Open User Settings (JSON)]を選択。
+8. 開いたファイルに以下のように追記して保存する。ただし、元々記入してあるものとの間に`,`を入れるのを忘れないこと。
 
 ```json
 {
     ...<元々記入してあるやつ。この後に,を入れることを忘れないこと>,
     "black-formatter.args": ["--line-length", "119"],
+    "isort.args": ["--profile", "black", "--line-length", "119"],
     "flake8.args": ["--extend-ignore", "E203", "--max-line-length", "119"],
-    "isort.args": ["--profile", "black", "--line-length", "119"]
+    "code-runner.runInTerminal": true
 }
 ```
 
-8. [Ctrl+Shift+P]->[Reload Window]を選択。
+9. [Ctrl+Shift+P]->[Reload Window]を選択。
 
 ## 8. Git の認証情報を設定する
 
