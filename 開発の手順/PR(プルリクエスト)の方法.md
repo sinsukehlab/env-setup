@@ -41,7 +41,10 @@ gco main
    下記をターミナルで実行する。
 
 ```shell
-gpull origin main
+gpull
+# There is no tracking information for the current branch.というエラーが出る場合は
+# 下記を実行してorigin mainをデフォルト(上流ブランチ)に設定する
+# gpull --set-upstream origin main
 ```
 
 ここでエラーが起こった際はリモートに無い変更がローカルの`main`ブランチにあるということである。  
@@ -103,6 +106,7 @@ PR はサブブランチ(`main`でないブランチ)を`main`ブランチにマ
 ```shell
 gpull origin main
 # エラー！
+# (このサブブランチにとってorigin mainは上流ブランチではないので省略できない)
 ```
 
 対処法は以下。
@@ -112,10 +116,12 @@ gpull origin main
 ```shell
 # リモートのmainの内容を取得する
 # g fetch origin mainでもよい
+# (このサブブランチにとってorigin mainは上流ブランチではないので省略できない)
 gfetch origin main
 
 # ローカルに自動マージをする(新たなコミットが作られる)
 # g merge origin mainでもよい
+# (このサブブランチにとってorigin mainは上流ブランチではないので省略できない)
 gmerge origin main
 ```
 
@@ -134,7 +140,10 @@ gmerge origin main
    ここで、ブランチ名は`main`ではなく自分のブランチ名なので気を付けること。
 
 ```shell
-gpush origin ブランチ名
+# 初回のみ
+gpush -u origin ブランチ名
+# 2回目以降
+gpush
 ```
 
 ### リモートブランチとローカルブランチの間で起きたコンフリクトの場合
@@ -142,6 +151,8 @@ gpush origin ブランチ名
 一つのブランチを複数人で編集した際等に、以下のコマンドでエラーが起き、このコンフリクトが発生する(ただし`main`ブランチで下記を実行してエラーになった場合は[リモートの`main`ブランチとローカルの`main`ブランチの間で起きたコンフリクトの場合](#リモートのmainブランチとローカルのmainブランチの間で起きたコンフリクトの場合)を参照)。
 
 ```shell
+# (origin ブランチ名はgpush -u origin ブランチ名か
+# gpull --set-upstream origin ブランチ名を実行したことがあれば省略可能)
 gpull origin ブランチ名
 # エラー！
 ```
@@ -152,9 +163,13 @@ gpull origin ブランチ名
 
 ```shell
 # リモートブランチの内容を取得する
+# (origin ブランチ名はgpush -u origin ブランチ名か
+# gpull --set-upstream origin ブランチ名を実行したことがあれば省略可能)
 gfetch origin ブランチ名
 
 # ローカルに自動マージをする(新たなコミットが作られる)
+# (origin ブランチ名はgpush -u origin ブランチ名か
+# gpull --set-upstream origin ブランチ名を実行したことがあれば省略可能)
 gmerge origin ブランチ名
 ```
 
@@ -206,6 +221,8 @@ g reset HEAD^ --soft
 gsu
 
 # エラーにならない
+# (origin mainはgpush -u origin mainか
+# gpull --set-upstream origin mainを実行したことがあれば省略可能)
 gpull origin main
 
 # ブランチを切るなどする
@@ -224,5 +241,7 @@ gsp
 2. なお、最後のローカルで行われた変更をリモートに反映する際のブランチ名は`main`とする。
 
 ```shell
+# (origin mainはgpush -u origin mainか
+# gpull --set-upstream origin mainを実行したことがあれば省略可能)
 gpush origin main
 ```
