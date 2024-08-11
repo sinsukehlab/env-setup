@@ -193,6 +193,9 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gfetch='git fetch'
 alias gmerge='git merge'
+alias greflog='git reflog'
+alias ginit='git init'
+alias gclone='git clone'
 ```
 
 5. ターミナルで下記を実行する。
