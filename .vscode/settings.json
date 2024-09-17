@@ -12,6 +12,7 @@
     "gmerge",
     "gpull",
     "gpush",
+    "grebase",
     "greflog",
     "greset",
     "gsvu",
