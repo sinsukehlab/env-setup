@@ -137,7 +137,7 @@ code ~/.gitconfig
     a = add
     c = commit
     cm = commit -m
-    ad = commit --amend
+    ad = commit --amend --no-edit
     adm = commit --amend -m
     b = branch
     co = checkout
