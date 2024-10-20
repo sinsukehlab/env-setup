@@ -160,6 +160,9 @@ code ~/.gitconfig
     su = stash -u
     svu = stash save -u
     sp = stash pop
+    ri = rebase -i
+    rc = rebase --continue
+    ra = rebase --abort
 ```
 
 3. ターミナルで下記を実行して、VSCode で`~/.zshrc`というファイルを開く(先ほど[4. Oh My Zsh をインストールする](#4-oh-my-zsh-をインストールする)で開いたものと同じファイルである)。
@@ -193,10 +196,14 @@ alias gpull='git pull'
 alias gpush='git push'
 alias gfetch='git fetch'
 alias gmerge='git merge'
-alias grebase='git rebase'
+alias gri='git ri'
+alias grc='git rc'
+alias gra='git ra'
 alias greflog='git reflog'
 alias ginit='git init'
 alias gclone='git clone'
+alias gremote='git remote'
+alias gsub='git submodule'
 ```
 
 5. ターミナルで下記を実行する。
