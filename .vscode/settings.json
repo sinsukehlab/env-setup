@@ -17,6 +17,7 @@
     "gremote",
     "greset",
     "gsub",
+    "gsuk",
     "gsvu",
     "isort",
     "noqa",

@@ -158,6 +158,7 @@ code ~/.gitconfig
     lpn = log --graph --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(green)- %an, %cr%Creset' --name-status
     sl = stash list
     su = stash -u
+    suk = stash -uk
     svu = stash save -u
     sp = stash pop
     ri = rebase -i
@@ -189,6 +190,7 @@ alias glp='git lp'
 alias glpn='git lpn'
 alias gsl='git sl'
 alias gsu='git su'
+alias gsuk='git suk'
 alias gsvu='git svu'
 alias gsp='git sp'
 alias greset='git reset'
